@@ -4,8 +4,11 @@ import Card from './Card';
 const Cards = ({fcards}) => (
     <div>
       <h3>These are your cards</h3>
-      <hr /> 
-      <Card key={fcards.id} fcards={fcards}/>
+      <hr />
+       { fcards.map( fcard => (
+      <Card id={fcard.id} front={fcard.front} back={fcard.back}/>
+      ))
+       }
     </div>
   )
 

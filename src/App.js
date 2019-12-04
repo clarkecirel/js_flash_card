@@ -7,8 +7,8 @@ import { Container, Header, } from "semantic-ui-react";
 class App extends React.Component {
   state = {
     fcards: [
-      { id: 1, front: 'First Front', back: 'First Back', show: true },
-      { id: 2, front: 'Max Card', back: 'First Back', show: true }
+      { id: 1, front: 'First Front', back: 'First Back' },
+      { id: 2, front: 'Second Front', back: 'Second Back' }
     ] 
   }
 
@@ -18,7 +18,7 @@ class App extends React.Component {
 
   addCard = (fcards) => {
     let card = {id: this.getId(), ...fcards};
-    this.setState({fcards: [ ...this.state.fcards, card]})
+    this.setState({fcards: [ card, ...this.state.fcards ]})
   }
 
   deleteCard = () => {
