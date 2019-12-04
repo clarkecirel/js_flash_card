@@ -1,13 +1,12 @@
 import React from 'react';
+import Card from './Card';
 
-class cards extends React.Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
-}
+const Cards = ({fcards}) => (
+    <div>
+      <h3>These are your cards</h3>
+      <hr /> 
+      <Card key={fcards.id} fcards={fcards}/>
+    </div>
+  )
 
-export default cards
+export default Cards;
