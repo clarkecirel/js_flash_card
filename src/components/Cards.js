@@ -1,15 +1,19 @@
 import React from 'react';
-import Card from './Card';
+import ShowCard from './Card';
+import {Card, Container} from 'semantic-ui-react';
 
 const Cards = ({fcards}) => (
-    <div>
-      <h3>These are your cards</h3>
-      <hr />
-       { fcards.map( fcard => (
-      <Card id={fcard.id} front={fcard.front} back={fcard.back}/>
-      ))
-       }
-    </div>
-  )
+      <Container>
+        <br />
+        {/* <Card.Group itemsPerRow={3}  style={{
+          backgroundColor: '#F6EEAC', 
+          border: '15px solid orange',
+          borderStyle: 'inset' }}>
+        { fcards.map( fcard => (
+        <ShowCard key={fcard.id} id={fcard.id} front={fcard.front} back={fcard.back}/>
+        ))}
+        </Card.Group> */}
+      </Container>
+);
 
 export default Cards;

@@ -1,14 +1,20 @@
 import React from 'react';
-import Cards from './components/Cards'
-import CardForm from './components/CardForm'
-import { Container, Header, } from "semantic-ui-react";
+import { Route } from 'react-router-dom';
+import Home from './components/Home';
+import Cards from './components/Cards';
+import CardForm from './components/CardForm';
+import { Container, Icon, Segment } from "semantic-ui-react";
 
 
 class App extends React.Component {
   state = {
     fcards: [
       { id: 1, front: 'First Front', back: 'First Back' },
-      { id: 2, front: 'Second Front', back: 'Second Back' }
+      { id: 2, front: 'Second Front', back: 'Second Back' },
+      { id: 3, front: 'Third Front', back: 'Third Back' },
+      { id: 4, front: 'Fourth Front', back: 'Fourth Back' },
+      { id: 5, front: 'Fifth Front', back: 'Fifth Back' },
+      { id: 6, front: 'Sixth Front', back: 'Sixth Back' }
     ] 
   }
 
@@ -27,20 +33,9 @@ class App extends React.Component {
   
   render() {
     return (
-      <div key={this.id} className="App">
-        <br />
-        <Header as='h1' style= {{ textAlign: 'center' }}>
-          Flash Cards App
-        </Header>
-        <hr />
-        <Container as='h3'style={{textAlign: 'center'}}>
-        <CardForm key={this.id} add={this.addCard} />
-        </Container>
-        <br />
-        <Container style={{textAlign: 'center'}}>
-        <Cards key={this.id} fcards={this.state.fcards} />
-        </Container>
-      </div>
+      <Route exact path="/" component={Home} />
+
+      
     );  
   };
 };

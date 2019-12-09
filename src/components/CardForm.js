@@ -16,30 +16,31 @@ class cardForm extends React.Component {
 
   render() {
     return (
-      <div>
-        This is a new card form
-        <br />
+      <div style={{color: 'white', textAlign: 'center'}}>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group widths='equal'>
           <Form.Input
             fluid
-            label='Front of the Card'
-            placeholder='Front of Card'
+            label=''
+            placeholder='Front of the Card'
             name='front'
             value={this.state.front}
             onChange={this.handleChange}
             />
-          
+          <br />
           <Form.Input
+            front='center'
             fluid
-            label='This will be the answer'
-            placeholder='Back of Card'
+            label=''
+            placeholder='Back of the Card'
             name='back'
             value={this.state.back}
             onChange={this.handleChange}
           />
           </Form.Group>
-          <button className="ui primary basic button" onClick={this.handleSubmit}>Submit</button>
+          <button className="ui primary basic button" onClick={this.handleSubmit}>
+            Submit
+          </button>
         </Form>
       </div>
     )
